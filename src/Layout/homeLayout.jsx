@@ -30,9 +30,7 @@ function homeLayout({ children }) {
     const res = dispatch(logout());
     // console.log(res);
 
-    if (res?.payload?.success) 
-      navigate("/");
-    
+    if (res?.payload?.success) navigate("/");
   }
   return (
     <div className="min-h-[90vh]">
@@ -63,6 +61,11 @@ function homeLayout({ children }) {
                 <Link to="/admin/dashboard"> Admin Dashboard</Link>
               </li>
             )}
+            {isLoggedIn && role === "ADMIN" && (
+              <li>
+                <Link to="/course/create"> Create new course</Link>
+              </li>
+            )}
             <li>
               <Link to="/courses">All Courses</Link>
             </li>
@@ -88,12 +91,10 @@ function homeLayout({ children }) {
               <li className=" absolute bottom-4 w-[90%]">
                 <div className="w-full flex items-center justify-center">
                   <button className="btn-primary px-4 py-1 font-semibold rounded-md w-full bg-blue-400">
-                    <Link to="/Profile">Profile</Link>
+                    <Link to="/user/Profile">Profile</Link>
                   </button>
                   <button className="btn-secondary px-4 py-1 font-semibold rounded-md w-full bg-pink-600">
-                    <Link  onClick={handelLogout}>
-                      Logout
-                    </Link>
+                    <Link onClick={handelLogout}>Logout</Link>
                   </button>
                 </div>
               </li>

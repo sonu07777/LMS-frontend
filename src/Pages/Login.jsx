@@ -80,7 +80,7 @@ function Signup() {
                     </button>
 
                     <p className="text-center">
-                        Don't have an account ? <Link to="/signUp" className='link text-accent cursor-pointer'> login</Link>
+                        Don't have an account ? <Link to="/signUp" className='link text-accent cursor-pointer'> sign up</Link>
                     </p>    
 
                 </form>

@@ -6,12 +6,14 @@ import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import { Toaster } from "react-hot-toast";
 import store from "./Redux/store.js";
+import Sonu from "./Sonu.jsx";
 
 createRoot(document.getElementById("root")).render(
   <Provider store={ store }>
     <BrowserRouter>
       <App />
       <Toaster />
+      {/* <Sonu/> */}
     </BrowserRouter>
   </Provider>
 );

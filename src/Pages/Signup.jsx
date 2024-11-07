@@ -23,9 +23,9 @@ function Sign_up() {
 
   function handleUserInput(e) {
     const { name, value } = e.target;
-    console.log(name);
-    console.log(value);
-    console.log(e);
+    // console.log(name);
+    // console.log(value);
+    // console.log(e);
     setSignupData({
       ...signupData,
       [name]: value,
