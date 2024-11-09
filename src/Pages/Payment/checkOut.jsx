@@ -53,11 +53,11 @@ function Checkout() {
         console.log("the set response is ", response);
         toast.success("Payment successful");
         const res = await dispatch(verifyUserPayment(paymentDetails));
-        if (res) {
-          toast.success("res is present");
-        } else {
-          toast.error("having some error");
-        }
+        // if (res) {
+        //   toast.success("res is present");
+        // } else {
+        //   toast.error("having some error");
+        // }
         console.log("the response is ",res);
         res?.payload?.success
           ? navigate("/checkout/success")
