@@ -18,6 +18,7 @@ import EditProfile from "./Pages/User/EditProfile.jsx";
 import CheckOut from "./Pages/Payment/checkOut.jsx";
 import CheckOutSuccess from "./Pages/Payment/CheckOutSuccess.jsx";
 import CheckoutFailure from "./Pages/Payment/checkOutFailuare.jsx";
+import DisplayLecture from "./Pages/Dashboard/displayLacture.jsx";
 
 function App() {
   return (
@@ -32,15 +33,16 @@ function App() {
         <Route path="/denied" element={<DeniedPage/>}></Route>
         <Route path="/course/description/" element={<Description/>}></Route>
 
-        <Route element={<RequireAuth allowedRoles={["ADMIN"]}/>}>
+        <Route element={<RequireAuth allowedRoles={["ADMIN"||"admin"]}/>}>
             <Route path="/course/create" element={<CreateCourse/>}></Route>
         </Route>
-        <Route element={<RequireAuth allowedRoles={["ADMIN","user"]}/>}>
+        <Route element={<RequireAuth allowedRoles={["ADMIN","user","admin"]}/>}>
             <Route path="/user/profile" element={<Profile/>}></Route>
             <Route path="/user/editProfile" element={<EditProfile/>}></Route>
             <Route path="/checkout" element={<CheckOut/>}></Route>
             <Route path="/checkout/success" element={<CheckOutSuccess/>}></Route>
             <Route path="/checkout/fail" element={<CheckoutFailure/>}></Route>
+            <Route path="/DisplayLecture" element={<DisplayLecture/>}></Route>
         </Route>
         <Route path="*" element={<NotFoundPage/>}></Route>
       </Routes>
