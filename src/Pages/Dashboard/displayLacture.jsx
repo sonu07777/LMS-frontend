@@ -68,7 +68,7 @@ function displayLecture() {
             <ul className="w-[28rem] p-2 rounded-lg shadow-[0_0_10px_black] space-y-4">
               <li className="font-semibold text-xl text-yellow-500 flex items-center justify-between">
                 <p>Lectures list</p>
-                {role == "ADMIN" ||"admin" && (
+                {role == "ADMIN" && (
                   <button
                     onClick={() =>
                       navigate("/course/addlecture", { state: { ...state } })
@@ -88,7 +88,7 @@ function displayLecture() {
                         <span> Lecture {idx + 1} : </span>
                         {lecture?.title}
                       </p>
-                      {role == "ADMIN" || "admin" && (
+                      {role == "ADMIN"  && (
                         <button
                           onClick={() =>
                             onLectureDelete(state?._id, lecture?._id)
@@ -103,7 +103,7 @@ function displayLecture() {
             </ul>
           </div>
         ) : (
-          role === "ADMIN" ||"admin" && (
+          role == "ADMIN" && (
             <button
               onClick={() =>
                 navigate("/course/addlecture", { state: { ...state } })

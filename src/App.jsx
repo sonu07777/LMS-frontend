@@ -19,6 +19,7 @@ import CheckOut from "./Pages/Payment/checkOut.jsx";
 import CheckOutSuccess from "./Pages/Payment/CheckOutSuccess.jsx";
 import CheckoutFailure from "./Pages/Payment/checkOutFailuare.jsx";
 import DisplayLecture from "./Pages/Dashboard/displayLacture.jsx";
+import AddLecture from "./Pages/Dashboard/AddLecture.jsx";
 
 function App() {
   return (
@@ -33,10 +34,11 @@ function App() {
         <Route path="/denied" element={<DeniedPage/>}></Route>
         <Route path="/course/description/" element={<Description/>}></Route>
 
-        <Route element={<RequireAuth allowedRoles={["ADMIN"||"admin"]}/>}>
+        <Route element={<RequireAuth allowedRoles={["ADMIN","admin"]}/>}> 
             <Route path="/course/create" element={<CreateCourse/>}></Route>
+            <Route path="/course/addlecture" element={<AddLecture/>}></Route>
         </Route>
-        <Route element={<RequireAuth allowedRoles={["ADMIN","user","admin"]}/>}>
+        <Route element={<RequireAuth allowedRoles={["ADMIN","user","admin","USER"]}/>}>
             <Route path="/user/profile" element={<Profile/>}></Route>
             <Route path="/user/editProfile" element={<EditProfile/>}></Route>
             <Route path="/checkout" element={<CheckOut/>}></Route>
